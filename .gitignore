@@ -1,17 +1,25 @@
-/diagnose.result
-/cache
+# Секреты
+.ssh/id_*
+.ssh/*_key
+.npmrc
+.netrc
+.env
+.env.local
+*.secret
+*.key
+.config/gh/
+.config/qwen/
+.config/openai/
+.bashrc_secrets
+.zshrc_secrets
 
-# Ignore Python cache files
-__pycache__/
-*.py[cod]
+# История
+.bash_history
+.zsh_history
+.python_history
 
-/dots/.config/quickshell/ii/.qmlls.ini
-
-# exp-update
-/.update-lock
-
-# custom os-release
-/os-release
-
-# Emacs auto backup file
+# Временные файлы
 *~
+*.swp
+.cache/
+.DS_Store
