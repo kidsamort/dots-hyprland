@@ -1,0 +1,6 @@
+[config]
+version_check = false
+
+[templates.custom_example]
+input_path = '~/.config/matugen/custom/templates/example/output.json'
+output_path = '~/.local/state/quickshell/user/generated/custom/example.json'
