@@ -304,6 +304,12 @@ switch() {
     fi
 
     matugen "${matugen_args[@]}"
+    
+    # Run custom matugen templates if custom config exists
+    if [ -f "$XDG_CONFIG_HOME/matugen/custom/config.toml" ]; then
+        matugen --config "$XDG_CONFIG_HOME/matugen/custom/config.toml" "${matugen_args[@]}" 2>/dev/null || true
+    fi
+    
     source "$(eval echo $ILLOGICAL_IMPULSE_VIRTUAL_ENV)/bin/activate"
     python3 "$SCRIPT_DIR/generate_colors_material.py" "${generate_colors_material_args[@]}" \
         > "$STATE_DIR"/user/generated/material_colors.scss
