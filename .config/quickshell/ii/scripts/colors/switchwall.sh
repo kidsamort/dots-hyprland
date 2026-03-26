@@ -56,7 +56,6 @@ post_process() {
     local wallpaper_path="$3"
 
     handle_kde_material_you_colors &
-    "$SCRIPT_DIR/code/material-code-set-color.sh" &
 }
 
 check_and_prompt_upscale() {
@@ -308,16 +307,6 @@ switch() {
     # Run custom matugen templates if custom config exists
     if [ -f "$XDG_CONFIG_HOME/matugen/custom/config.toml" ]; then
         matugen --config "$XDG_CONFIG_HOME/matugen/custom/config.toml" "${matugen_args[@]}" 2>/dev/null || true
-    fi
-
-    # Generate pywal-compatible cache for VS Code Wal Theme extension
-    if [ -x "$XDG_CONFIG_HOME/matugen/custom/templates/vscode/generate-pywal-cache.sh" ]; then
-        "$XDG_CONFIG_HOME/matugen/custom/templates/vscode/generate-pywal-cache.sh" >/dev/null 2>&1
-    fi
-
-    # Apply Wal Theme for VS Code and forks
-    if [ -x "$XDG_CONFIG_HOME/matugen/custom/templates/vscode/apply-wal-theme.sh" ]; then
-        "$XDG_CONFIG_HOME/matugen/custom/templates/vscode/apply-wal-theme.sh" >/dev/null 2>&1
     fi
 
     source "$(eval echo $ILLOGICAL_IMPULSE_VIRTUAL_ENV)/bin/activate"

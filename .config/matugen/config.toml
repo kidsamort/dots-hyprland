@@ -32,9 +32,3 @@ output_path = '~/.local/state/quickshell/user/generated/color.txt'
 [templates.wallpaper]
 input_path = '~/.config/matugen/templates/wallpaper.txt'
 output_path = '~/.local/state/quickshell/user/generated/wallpaper/path.txt'
-
-# VS Code и форки (Antigravity, Cursor, Code Insiders)
-# Шаблон генерирует тему для расширения Wal Theme (dlasagno)
-[templates.vscode]
-input_path = '~/.config/matugen/custom/templates/vscode/wal-theme-color-theme.json'
-output_path = '~/.config/Code/User/globalStorage/dlasagno.wal-theme/themes/wal-theme-color-theme.json'

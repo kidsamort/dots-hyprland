@@ -272,28 +272,28 @@
       "name": "Tag",
       "scope": ["entity.name.tag", "meta.tag.sgml", "markup.deleted.git_gutter"],
       "settings": {
-        "foreground": "{color1}"
+        "foreground": "{color3}"
       }
     },
     {
       "name": "Function, Special Method",
       "scope": ["entity.name.function", "meta.function-call", "variable.function", "support.function", "keyword.other.special-method"],
       "settings": {
-        "foreground": "{color1}"
+        "foreground": "{color2}"
       }
     },
     {
       "name": "Block Level Variables",
       "scope": ["meta.block variable.other"],
       "settings": {
-        "foreground": "{color6}"
+        "foreground": "{color3}"
       }
     },
     {
       "name": "Other Variable, String Link",
       "scope": ["support.other.variable", "string.other.link"],
       "settings": {
-        "foreground": "{color6}"
+        "foreground": "{color4}"
       }
     },
     {

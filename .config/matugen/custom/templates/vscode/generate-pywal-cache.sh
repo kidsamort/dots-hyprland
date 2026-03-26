@@ -36,23 +36,42 @@ surface_container_lowest="#000000"  # fallback
 
 # Формируем 16 ANSI цветов для pywal
 # color0-7: normal, color8-15: bright
+# Изменяем маппинг, чтобы color1 (акцент) был основным цветом (primary), а не ошибкой (error)
 color0="$background"               # black (background)
-color1="$error"                    # red
-color2="$primary"                  # green
-color3="$tertiary"                 # yellow
-color4="$secondary"                # blue
-color5="$secondary_container"      # magenta
-color6="$tertiary_container"       # cyan
-color7="$foreground"               # white
+color1="$primary"                  # red (accent 1)
+color2="$secondary"                # green (accent 2)
+color3="$tertiary"                 # yellow (accent 3)
+color4="$primary_container"        # blue (accent 4)
+color5="$error"                    # magenta (error)
+color6="$tertiary_container"       # cyan (accent 5)
+color7="$foreground"               # white (foreground)
 
 color8="$outline"                  # bright black
-color9="$error"                    # bright red
-color10="$primary_container"       # bright green
-color11="$tertiary_container"      # bright yellow
-color12="$secondary"               # bright blue
-color13="$secondary_container"     # bright magenta
+color9="$primary"                  # bright red
+color10="$secondary"               # bright green
+color11="$tertiary"                # bright yellow
+color12="$primary_container"       # bright blue
+color13="$error"                   # bright magenta
 color14="$tertiary_container"      # bright cyan
 color15="$foreground"              # bright white
+
+# Очищаем цвета от возможных пробелов (для стабильности Color() в JS)
+color0=$(echo "$color0" | xargs)
+color1=$(echo "$color1" | xargs)
+color2=$(echo "$color2" | xargs)
+color3=$(echo "$color3" | xargs)
+color4=$(echo "$color4" | xargs)
+color5=$(echo "$color5" | xargs)
+color6=$(echo "$color6" | xargs)
+color7=$(echo "$color7" | xargs)
+color8=$(echo "$color8" | xargs)
+color9=$(echo "$color9" | xargs)
+color10=$(echo "$color10" | xargs)
+color11=$(echo "$color11" | xargs)
+color12=$(echo "$color12" | xargs)
+color13=$(echo "$color13" | xargs)
+color14=$(echo "$color14" | xargs)
+color15=$(echo "$color15" | xargs)
 
 # Получаем путь к обоям
 wallpaper_path=""
