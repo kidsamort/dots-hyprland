@@ -79,18 +79,28 @@ reboot
 | Antigravity | `~/.config/Antigravity/` |
 | Cursor | `~/.config/Cursor/` |
 
+**Как это работает:**
+
+1. `switchwall.sh` → matugen генерирует Material You цвета
+2. `generate-pywal-cache.sh` → создаёт pywal-compatible cache (`~/.cache/wal/colors.json`)
+3. `apply-wal-theme.sh` → генерирует тему для каждого редактора
+
 **Настройка:**
 
 1. Установи расширение **Wal Theme** в каждом редакторе
 2. Тема применяется автоматически при смене обоев
-3. Для ручного применения: `matugen --config ~/.config/matugen/custom/config.toml image <путь_к_изображению>`
+3. Для ручного применения:
+   ```bash
+   ~/.config/matugen/custom/templates/vscode/generate-pywal-cache.sh
+   ~/.config/matugen/custom/templates/vscode/apply-wal-theme.sh
+   ```
 
 **Выбор темы в редакторе:**
 - `Ctrl+K Ctrl+T` → выбери **Wal Theme**
 
 **Шаблон:** `~/.config/matugen/custom/templates/vscode/wal-theme-color-theme.json`
 
-Шаблон основан на [pywal16 colors-vscode.json](https://github.com/eylles/pywal16) и адаптирован для matugen с использованием Material You цветов.
+Шаблон основан на [pywal16 colors-vscode.json](https://github.com/eylles/pywal16) и использует ANSI цвета (color0-color15).
 
 ---
 
