@@ -1,6 +1,18 @@
 [config]
 version_check = false
 
-[templates.custom_example]
-input_path = '~/.config/matugen/custom/templates/example/output.json'
-output_path = '~/.local/state/quickshell/user/generated/custom/example.json'
+# VS Code и форки
+# Эти шаблоны работают вместе с расширением Wal Theme (dlasagno)
+# Установите расширение в каждом редакторе для автоматического применения темы
+
+[templates.vscode_antigravity]
+input_path = '~/.config/matugen/custom/templates/vscode/wal-theme-color-theme.json'
+output_path = '~/.config/Antigravity/User/globalStorage/dlasagno.wal-theme/themes/wal-theme-color-theme.json'
+
+[templates.vscode_insiders]
+input_path = '~/.config/matugen/custom/templates/vscode/wal-theme-color-theme.json'
+output_path = '~/.config/Code - Insiders/User/globalStorage/dlasagno.wal-theme/themes/wal-theme-color-theme.json'
+
+[templates.cursor]
+input_path = '~/.config/matugen/custom/templates/vscode/wal-theme-color-theme.json'
+output_path = '~/.config/Cursor/User/globalStorage/dlasagno.wal-theme/themes/wal-theme-color-theme.json'

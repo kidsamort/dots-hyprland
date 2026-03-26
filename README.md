@@ -56,8 +56,41 @@ reboot
 |------------|----------|
 | `.config/fish/` | Конфиги Fish shell (алиасы, темы) |
 | `.config/hypr/` | Конфиги Hyprland (оконный менеджер) |
+| `.config/matugen/` | Конфиги matugen (генерация тем) |
 | `.gitignore` | Список игнорируемых файлов |
 | `~/.bashrc_secrets` | **НЕ В GIT!** Секреты и API ключи |
+
+---
+
+## 🎨 Генерация тем (Matugen)
+
+### VS Code и форки (Antigravity, Cursor)
+
+Тема для VS Code и форков генерируется автоматически при смене обоев через `switchwall.sh`.
+
+**Требуемое расширение:** [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) от `dlasagno`
+
+**Поддерживаемые редакторы:**
+
+| Редактор | Путь |
+|----------|------|
+| VS Code | `~/.config/Code/` |
+| VS Code Insiders | `~/.config/Code - Insiders/` |
+| Antigravity | `~/.config/Antigravity/` |
+| Cursor | `~/.config/Cursor/` |
+
+**Настройка:**
+
+1. Установи расширение **Wal Theme** в каждом редакторе
+2. Тема применяется автоматически при смене обоев
+3. Для ручного применения: `matugen --config ~/.config/matugen/custom/config.toml image <путь_к_изображению>`
+
+**Выбор темы в редакторе:**
+- `Ctrl+K Ctrl+T` → выбери **Wal Theme**
+
+**Шаблон:** `~/.config/matugen/custom/templates/vscode/wal-theme-color-theme.json`
+
+Шаблон основан на [pywal16 colors-vscode.json](https://github.com/eylles/pywal16) и адаптирован для matugen с использованием Material You цветов.
 
 ---
 

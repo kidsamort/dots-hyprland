@@ -1,0 +1,655 @@
+{
+  "name": "Wal Theme",
+  "colors": {
+    "foreground": "{{colors.on_surface.default.hex}}",
+    "focusBorder": "{{colors.secondary.default.hex}}",
+    "selection.background": "{{colors.secondary.default.hex}}",
+    "descriptionForeground": "{{colors.on_surface_variant.default.hex}}",
+    "errorForeground": "{{colors.error.default.hex}}",
+    "textLink.foreground": "{{colors.primary.default.hex}}",
+    "textLink.activeForeground": "{{colors.tertiary.default.hex}}",
+    "textBlockQuote.background": "{{colors.surface_container_low.default.hex}}",
+    "textBlockQuote.border": "{{colors.secondary.default.hex}}",
+    "textCodeBlock.background": "{{colors.surface_container_lowest.default.hex}}",
+    "textPreformat.foreground": "{{colors.tertiary.default.hex}}",
+    "textSeparator.foreground": "{{colors.outline.default.hex}}",
+    "button.background": "{{colors.primary.default.hex}}",
+    "button.foreground": "{{colors.on_primary.default.hex}}",
+    "button.hoverBackground": "{{colors.primary_container.default.hex}}",
+    "dropdown.background": "{{colors.surface.default.hex}}",
+    "dropdown.border": "{{colors.outline.default.hex}}",
+    "dropdown.foreground": "{{colors.on_surface.default.hex}}",
+    "input.background": "{{colors.surface_container_lowest.default.hex}}",
+    "input.border": "{{colors.outline.default.hex}}",
+    "input.foreground": "{{colors.on_surface.default.hex}}",
+    "input.placeholderForeground": "{{colors.on_surface_variant.default.hex}}",
+    "inputOption.activeBorder": "{{colors.secondary.default.hex}}",
+    "inputValidation.infoBorder": "{{colors.primary.default.hex}}",
+    "inputValidation.warningBorder": "{{colors.tertiary.default.hex}}",
+    "inputValidation.errorBorder": "{{colors.error.default.hex}}",
+    "badge.foreground": "{{colors.on_primary.default.hex}}",
+    "badge.background": "{{colors.primary.default.hex}}",
+    "progressBar.background": "{{colors.primary.default.hex}}",
+    "list.activeSelectionBackground": "{{colors.surface_container_high.default.hex}}",
+    "list.activeSelectionForeground": "{{colors.on_surface.default.hex}}",
+    "list.dropBackground": "{{colors.secondary.default.hex}}",
+    "list.focusBackground": "{{colors.surface_container.default.hex}}",
+    "list.focusForeground": "{{colors.on_surface.default.hex}}",
+    "list.highlightForeground": "{{colors.primary.default.hex}}",
+    "list.hoverBackground": "{{colors.surface_container.default.hex}}",
+    "list.hoverForeground": "{{colors.on_surface.default.hex}}",
+    "list.inactiveSelectionBackground": "{{colors.surface_container.default.hex}}",
+    "list.inactiveSelectionForeground": "{{colors.on_surface.default.hex}}",
+    "list.inactiveFocusBackground": "{{colors.surface_container.default.hex}}",
+    "list.invalidItemForeground": "{{colors.error.default.hex}}",
+    "list.errorForeground": "{{colors.error.default.hex}}",
+    "list.warningForeground": "{{colors.tertiary.default.hex}}",
+    "activityBar.background": "{{colors.surface.default.hex}}",
+    "activityBar.dropBorder": "{{colors.secondary.default.hex}}",
+    "activityBar.foreground": "{{colors.on_surface.default.hex}}",
+    "activityBar.inactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+    "activityBar.border": "{{colors.outline.default.hex}}",
+    "activityBarBadge.background": "{{colors.primary.default.hex}}",
+    "activityBarBadge.foreground": "{{colors.on_primary.default.hex}}",
+    "sideBar.background": "{{colors.surface.default.hex}}",
+    "sideBar.foreground": "{{colors.on_surface.default.hex}}",
+    "sideBar.border": "{{colors.outline.default.hex}}",
+    "sideBarTitle.foreground": "{{colors.on_surface.default.hex}}",
+    "sideBarSectionHeader.background": "{{colors.surface_container_lowest.default.hex}}",
+    "sideBarSectionHeader.foreground": "{{colors.on_surface.default.hex}}",
+    "sideBarSectionHeader.border": "{{colors.outline.default.hex}}",
+    "editorGroup.border": "{{colors.outline.default.hex}}",
+    "editorGroup.dropBackground": "{{colors.secondary.default.hex}}",
+    "editorGroupHeader.noTabsBackground": "{{colors.surface.default.hex}}",
+    "editorGroupHeader.tabsBackground": "{{colors.surface.default.hex}}",
+    "editorGroupHeader.tabsBorder": "{{colors.outline.default.hex}}",
+    "tab.activeBackground": "{{colors.surface.default.hex}}",
+    "tab.activeForeground": "{{colors.on_surface.default.hex}}",
+    "tab.border": "{{colors.outline.default.hex}}",
+    "tab.activeBorder": "{{colors.primary.default.hex}}",
+    "tab.unfocusedActiveBorder": "{{colors.outline_variant.default.hex}}",
+    "tab.inactiveBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "tab.inactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+    "tab.unfocusedActiveForeground": "{{colors.on_surface_variant.default.hex}}",
+    "tab.unfocusedInactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+    "editor.background": "{{colors.surface.default.hex}}",
+    "editor.foreground": "{{colors.on_surface.default.hex}}",
+    "editorLineNumber.foreground": "{{colors.on_surface_variant.default.hex}}",
+    "editorLineNumber.activeForeground": "{{colors.on_surface.default.hex}}",
+    "editorCursor.foreground": "{{colors.primary.default.hex}}",
+    "editor.selectionBackground": "{{colors.secondary_container.default.hex}}",
+    "editor.selectionHighlightBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "editor.wordHighlightBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "editor.wordHighlightStrongBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "editor.findMatchBackground": "{{colors.tertiary_container.default.hex}}",
+    "editor.findMatchHighlightBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "editor.findRangeHighlightBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "editor.hoverHighlightBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "editor.lineHighlightBackground": "{{colors.surface_container_low.default.hex}}",
+    "editor.lineHighlightBorder": "{{colors.surface_container_low.default.hex}}",
+    "editorLink.activeForeground": "{{colors.primary.default.hex}}",
+    "editor.rangeHighlightBackground": "{{colors.surface_container_low.default.hex}}",
+    "editorWhitespace.foreground": "{{colors.outline_variant.default.hex}}",
+    "editorIndentGuide.background": "{{colors.outline_variant.default.hex}}",
+    "editorIndentGuide.activeBackground": "{{colors.outline.default.hex}}",
+    "editorRuler.foreground": "{{colors.outline_variant.default.hex}}",
+    "editorCodeLens.foreground": "{{colors.on_surface_variant.default.hex}}",
+    "editorBracketMatch.background": "{{colors.surface_container_lowest.default.hex}}",
+    "editorBracketMatch.border": "{{colors.outline.default.hex}}",
+    "editorOverviewRuler.border": "{{colors.outline.default.hex}}",
+    "editorOverviewRuler.findMatchForeground": "{{colors.tertiary.default.hex}}",
+    "editorOverviewRuler.rangeHighlightForeground": "{{colors.outline.default.hex}}",
+    "editorOverviewRuler.selectionHighlightForeground": "{{colors.secondary.default.hex}}",
+    "editorOverviewRuler.wordHighlightForeground": "{{colors.primary.default.hex}}",
+    "editorOverviewRuler.wordHighlightStrongForeground": "{{colors.secondary.default.hex}}",
+    "editorOverviewRuler.modifiedForeground": "{{colors.tertiary.default.hex}}",
+    "editorOverviewRuler.addedForeground": "{{colors.primary.default.hex}}",
+    "editorOverviewRuler.deletedForeground": "{{colors.error.default.hex}}",
+    "editorOverviewRuler.errorForeground": "{{colors.error.default.hex}}",
+    "editorOverviewRuler.warningForeground": "{{colors.tertiary.default.hex}}",
+    "editorOverviewRuler.infoForeground": "{{colors.primary.default.hex}}",
+    "editorError.foreground": "{{colors.error.default.hex}}",
+    "editorError.border": "{{colors.error.default.hex}}",
+    "editorWarning.foreground": "{{colors.tertiary.default.hex}}",
+    "editorWarning.border": "{{colors.tertiary.default.hex}}",
+    "editorInfo.foreground": "{{colors.primary.default.hex}}",
+    "editorInfo.border": "{{colors.primary.default.hex}}",
+    "editorGutter.background": "{{colors.surface.default.hex}}",
+    "editorGutter.modifiedBackground": "{{colors.tertiary.default.hex}}",
+    "editorGutter.addedBackground": "{{colors.primary.default.hex}}",
+    "editorGutter.deletedBackground": "{{colors.error.default.hex}}",
+    "diffEditor.insertedTextBackground": "{{colors.primary.default.hex}}33",
+    "diffEditor.removedTextBackground": "{{colors.error.default.hex}}33",
+    "widget.shadow": "{{colors.shadow.default.hex}}",
+    "editorWidget.background": "{{colors.surface_container_lowest.default.hex}}",
+    "editorWidget.border": "{{colors.outline.default.hex}}",
+    "editorSuggestWidget.background": "{{colors.surface_container_lowest.default.hex}}",
+    "editorSuggestWidget.border": "{{colors.outline.default.hex}}",
+    "editorSuggestWidget.foreground": "{{colors.on_surface.default.hex}}",
+    "editorSuggestWidget.highlightForeground": "{{colors.primary.default.hex}}",
+    "editorSuggestWidget.selectedBackground": "{{colors.secondary.default.hex}}",
+    "editorHoverWidget.background": "{{colors.surface_container_lowest.default.hex}}",
+    "editorHoverWidget.border": "{{colors.outline.default.hex}}",
+    "editorMarkerNavigation.background": "{{colors.surface_container_lowest.default.hex}}",
+    "editorMarkerNavigationError.background": "{{colors.error.default.hex}}",
+    "editorMarkerNavigationWarning.background": "{{colors.tertiary.default.hex}}",
+    "editorMarkerNavigationInfo.background": "{{colors.primary.default.hex}}",
+    "peekView.border": "{{colors.secondary.default.hex}}",
+    "peekViewEditor.background": "{{colors.surface_container_lowest.default.hex}}",
+    "peekViewEditorGutter.background": "{{colors.surface_container_lowest.default.hex}}",
+    "peekViewEditor.matchHighlightBackground": "{{colors.tertiary_container.default.hex}}",
+    "peekViewResult.background": "{{colors.surface_container_lowest.default.hex}}",
+    "peekViewResult.fileForeground": "{{colors.on_surface.default.hex}}",
+    "peekViewResult.lineForeground": "{{colors.on_surface_variant.default.hex}}",
+    "peekViewResult.matchHighlightBackground": "{{colors.tertiary_container.default.hex}}",
+    "peekViewResult.selectionBackground": "{{colors.secondary.default.hex}}",
+    "peekViewResult.selectionForeground": "{{colors.on_surface.default.hex}}",
+    "peekViewTitle.background": "{{colors.surface_container_lowest.default.hex}}",
+    "peekViewTitleDescription.foreground": "{{colors.on_surface_variant.default.hex}}",
+    "peekViewTitleLabel.foreground": "{{colors.on_surface.default.hex}}",
+    "merge.currentHeaderBackground": "{{colors.primary.default.hex}}",
+    "merge.currentContentBackground": "{{colors.primary_container.default.hex}}4D",
+    "merge.incomingHeaderBackground": "{{colors.tertiary.default.hex}}",
+    "merge.incomingContentBackground": "{{colors.tertiary_container.default.hex}}4D",
+    "merge.border": "{{colors.outline.default.hex}}",
+    "panel.background": "{{colors.surface.default.hex}}",
+    "panel.border": "{{colors.outline.default.hex}}",
+    "panelTitle.activeBorder": "{{colors.secondary.default.hex}}",
+    "panelTitle.activeForeground": "{{colors.on_surface.default.hex}}",
+    "panelTitle.inactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+    "statusBar.background": "{{colors.secondary_container.default.hex}}",
+    "statusBar.foreground": "{{colors.on_secondary_container.default.hex}}",
+    "statusBar.border": "{{colors.outline.default.hex}}",
+    "statusBar.debuggingBackground": "{{colors.tertiary.default.hex}}",
+    "statusBar.debuggingForeground": "{{colors.on_tertiary.default.hex}}",
+    "statusBar.noFolderBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "statusBar.noFolderForeground": "{{colors.on_surface.default.hex}}",
+    "statusBarItem.activeBackground": "{{colors.secondary.default.hex}}",
+    "statusBarItem.hoverBackground": "{{colors.secondary_container.default.hex}}",
+    "statusBarItem.prominentBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "statusBarItem.prominentHoverBackground": "{{colors.surface_container_low.default.hex}}",
+    "titleBar.activeBackground": "{{colors.surface.default.hex}}",
+    "titleBar.activeForeground": "{{colors.on_surface.default.hex}}",
+    "titleBar.inactiveBackground": "{{colors.surface.default.hex}}",
+    "titleBar.inactiveForeground": "{{colors.on_surface_variant.default.hex}}",
+    "titleBar.border": "{{colors.outline.default.hex}}",
+    "notificationCenter.border": "{{colors.outline.default.hex}}",
+    "notificationCenterHeader.foreground": "{{colors.on_surface.default.hex}}",
+    "notificationCenterHeader.background": "{{colors.surface_container_lowest.default.hex}}",
+    "notificationToast.border": "{{colors.outline.default.hex}}",
+    "notification.foreground": "{{colors.on_surface.default.hex}}",
+    "notification.background": "{{colors.surface_container_lowest.default.hex}}",
+    "notification.border": "{{colors.outline.default.hex}}",
+    "notification.infoForeground": "{{colors.on_surface.default.hex}}",
+    "notification.infoBackground": "{{colors.primary.default.hex}}",
+    "notification.warningForeground": "{{colors.on_surface.default.hex}}",
+    "notification.warningBackground": "{{colors.tertiary.default.hex}}",
+    "notification.errorForeground": "{{colors.on_surface.default.hex}}",
+    "notification.errorBackground": "{{colors.error.default.hex}}",
+    "extensionButton.prominentForeground": "{{colors.on_primary.default.hex}}",
+    "extensionButton.prominentBackground": "{{colors.primary.default.hex}}",
+    "extensionButton.prominentHoverBackground": "{{colors.primary_container.default.hex}}",
+    "pickerGroup.border": "{{colors.outline.default.hex}}",
+    "pickerGroup.foreground": "{{colors.outline.default.hex}}",
+    "quickInput.background": "{{colors.surface_container_lowest.default.hex}}",
+    "quickInput.foreground": "{{colors.on_surface.default.hex}}",
+    "quickInputTitle.background": "{{colors.surface_container_lowest.default.hex}}",
+    "terminal.background": "{{colors.surface.default.hex}}",
+    "terminal.foreground": "{{colors.on_surface.default.hex}}",
+    "terminal.ansiBlack": "{{colors.surface_container_lowest.default.hex}}",
+    "terminal.ansiRed": "{{colors.error.default.hex}}",
+    "terminal.ansiGreen": "{{colors.primary.default.hex}}",
+    "terminal.ansiYellow": "{{colors.tertiary.default.hex}}",
+    "terminal.ansiBlue": "{{colors.secondary.default.hex}}",
+    "terminal.ansiMagenta": "{{colors.inverse_primary.default.hex}}",
+    "terminal.ansiCyan": "{{colors.tertiary.default.hex}}",
+    "terminal.ansiWhite": "{{colors.on_surface.default.hex}}",
+    "terminal.ansiBrightBlack": "{{colors.outline.default.hex}}",
+    "terminal.ansiBrightRed": "{{colors.error_container.default.hex}}",
+    "terminal.ansiBrightGreen": "{{colors.primary_container.default.hex}}",
+    "terminal.ansiBrightYellow": "{{colors.tertiary_container.default.hex}}",
+    "terminal.ansiBrightBlue": "{{colors.secondary_container.default.hex}}",
+    "terminal.ansiBrightMagenta": "{{colors.inverse_primary.default.hex}}",
+    "terminal.ansiBrightCyan": "{{colors.tertiary_container.default.hex}}",
+    "terminal.ansiBrightWhite": "{{colors.on_surface.default.hex}}",
+    "terminal.selectionBackground": "{{colors.secondary.default.hex}}",
+    "terminalCursor.foreground": "{{colors.primary.default.hex}}",
+    "terminalCursor.background": "{{colors.surface.default.hex}}",
+    "debugToolBar.background": "{{colors.surface_container_lowest.default.hex}}",
+    "welcomePage.buttonBackground": "{{colors.surface_container_lowest.default.hex}}",
+    "welcomePage.buttonHoverBackground": "{{colors.surface_container_low.default.hex}}",
+    "walkThrough.embeddedEditorBackground": "{{colors.surface.default.hex}}",
+    "gitDecoration.modifiedResourceForeground": "{{colors.tertiary.default.hex}}",
+    "gitDecoration.deletedResourceForeground": "{{colors.error.default.hex}}",
+    "gitDecoration.untrackedResourceForeground": "{{colors.primary.default.hex}}",
+    "gitDecoration.ignoredResourceForeground": "{{colors.on_surface_variant.default.hex}}",
+    "gitDecoration.conflictingResourceForeground": "{{colors.error.default.hex}}"
+  },
+  "tokenColors": [
+    {
+      "name": "Comment",
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "{{colors.outline.default.hex}}"
+      }
+    },
+    {
+      "name": "Variables",
+      "scope": ["variable", "string constant.other.placeholder"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "Colors",
+      "scope": ["constant.other.color"],
+      "settings": {
+        "foreground": "{{colors.on_surface.default.hex}}"
+      }
+    },
+    {
+      "name": "Invalid",
+      "scope": ["invalid", "invalid.illegal"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Keyword, Storage",
+      "scope": ["keyword", "storage.type", "storage.modifier"],
+      "settings": {
+        "foreground": "{{colors.secondary.default.hex}}"
+      }
+    },
+    {
+      "name": "Operator, Misc",
+      "scope": ["keyword.control", "constant.other.color", "punctuation", "meta.tag", "punctuation.definition.tag", "punctuation.separator.inheritance.php", "punctuation.definition.tag.html", "punctuation.definition.tag.begin.html", "punctuation.definition.tag.end.html", "punctuation.section.embedded", "keyword.other.template", "keyword.other.substitution"],
+      "settings": {
+        "foreground": "{{colors.on_surface.default.hex}}"
+      }
+    },
+    {
+      "name": "Tag",
+      "scope": ["entity.name.tag", "meta.tag.sgml", "markup.deleted.git_gutter"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Function, Special Method",
+      "scope": ["entity.name.function", "meta.function-call", "variable.function", "support.function", "keyword.other.special-method"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Block Level Variables",
+      "scope": ["meta.block variable.other"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "Other Variable, String Link",
+      "scope": ["support.other.variable", "string.other.link"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
+      "scope": ["constant.numeric", "constant.language", "support.constant", "constant.character", "constant.escape", "variable.parameter", "keyword.other.unit", "keyword.other"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "String, Symbols, Inherited Class, Markup Heading",
+      "scope": ["string", "constant.other.symbol", "constant.other.key", "entity.other.inherited-class", "markup.heading", "markup.inserted.git_gutter", "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"],
+      "settings": {
+        "foreground": "{{colors.primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Class, Support",
+      "scope": ["entity.name", "support.type", "support.class", "support.orther.namespace.use.php", "meta.use.php", "support.other.namespace.php", "markup.changed.git_gutter", "support.type.sys-types"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Entity Types",
+      "scope": ["support.type"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "CSS Class and Support",
+      "scope": ["source.css support.type.property-name", "source.sass support.type.property-name", "source.scss support.type.property-name", "source.less support.type.property-name", "source.stylus support.type.property-name", "source.postcss support.type.property-name"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Sub-methods",
+      "scope": ["entity.name.module.js", "variable.import.parameter.js", "variable.other.class.js"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Language methods",
+      "scope": ["variable.language"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "entity.name.method.js",
+      "scope": ["entity.name.method.js"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "meta.method.js",
+      "scope": ["meta.class-method.js entity.name.function.js", "variable.function.constructor"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Attributes",
+      "scope": ["entity.other.attribute-name"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "HTML Attributes",
+      "scope": ["text.html.basic entity.other.attribute-name.html", "text.html.basic entity.other.attribute-name"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "CSS Classes",
+      "scope": ["entity.other.attribute-name.class"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "CSS ID's",
+      "scope": ["source.sass keyword.control"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Inserted",
+      "scope": ["markup.inserted"],
+      "settings": {
+        "foreground": "{{colors.primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Deleted",
+      "scope": ["markup.deleted"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Changed",
+      "scope": ["markup.changed"],
+      "settings": {
+        "foreground": "{{colors.secondary.default.hex}}"
+      }
+    },
+    {
+      "name": "Regular Expressions",
+      "scope": ["string.regexp"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "Escape Characters",
+      "scope": ["constant.character.escape"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "URL",
+      "scope": ["*url*", "*link*", "*uri*"],
+      "settings": {
+        "fontStyle": "underline"
+      }
+    },
+    {
+      "name": "Decorators",
+      "scope": ["tag.decorator.js entity.name.tag.js", "tag.decorator.js punctuation.definition.tag.js"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "ES7 Bind Operator",
+      "scope": ["source.js constant.other.object.key.js string.unquoted.label.js"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 0",
+      "scope": ["source.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 1",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.primary.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 2",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 3",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 4",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.primary.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 5",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 6",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 7",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.primary.default.hex}}"
+      }
+    },
+    {
+      "name": "JSON Key - Level 8",
+      "scope": ["source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Plain",
+      "scope": ["text.html.markdown", "punctuation.definition.list_item.markdown"],
+      "settings": {
+        "foreground": "{{colors.on_surface.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Markup Raw Inline",
+      "scope": ["text.html.markdown markup.inline.raw.markdown"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Markup Raw Inline Punctuation",
+      "scope": ["text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Heading",
+      "scope": ["markdown.heading", "markup.heading | markup.heading entity.name", "markup.heading.markdown punctuation.definition.heading.markdown"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Italic",
+      "scope": ["markup.italic"],
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Bold",
+      "scope": ["markup.bold", "markup.bold string"],
+      "settings": {
+        "fontStyle": "bold",
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Bold-Italic",
+      "scope": ["markup.bold markup.italic", "markup.italic markup.bold", "markup.quote markup.bold", "markup.bold markup.italic string", "markup.italic markup.bold string", "markup.quote markup.italic string"],
+      "settings": {
+        "fontStyle": "bold",
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Underline",
+      "scope": ["markup.underline"],
+      "settings": {
+        "fontStyle": "underline",
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Blockquote",
+      "scope": ["markup.quote punctuation.definition.blockquote.markdown"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Quote",
+      "scope": ["markup.quote"],
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Markdown - Link",
+      "scope": ["string.other.link.title.markdown"],
+      "settings": {
+        "foreground": "{{colors.primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Link Description",
+      "scope": ["string.other.link.description.title.markdown"],
+      "settings": {
+        "foreground": "{{colors.inverse_primary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Link Anchor",
+      "scope": ["constant.other.reference.link.markdown"],
+      "settings": {
+        "foreground": "{{colors.tertiary.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Raw Block",
+      "scope": ["markup.raw.block"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Raw Block Fenced",
+      "scope": ["markup.raw.block.fenced.markdown"],
+      "settings": {
+        "foreground": "{{colors.surface_container_lowest.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Fenced Bode Block",
+      "scope": ["punctuation.definition.fenced.markdown"],
+      "settings": {
+        "foreground": "{{colors.surface_container_lowest.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Fenced Bode Block Variable",
+      "scope": ["markup.raw.block.fenced.markdown", "variable.language.fenced.markdown", "punctuation.section.class.end"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Fenced Language",
+      "scope": ["variable.language.fenced.markdown"],
+      "settings": {
+        "foreground": "{{colors.outline.default.hex}}"
+      }
+    },
+    {
+      "name": "Markdown - Separator",
+      "scope": ["meta.separator"],
+      "settings": {
+        "fontStyle": "bold",
+        "foreground": "{{colors.outline.default.hex}}"
+      }
+    },
+    {
+      "name": "Markup - Table",
+      "scope": ["markup.table"],
+      "settings": {
+        "foreground": "{{colors.error.default.hex}}"
+      }
+    }
+  ]
+}
