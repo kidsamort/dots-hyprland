@@ -1,0 +1,24 @@
+# Файлы под управлением dot (stow + hyprctl reload)
+managed:
+  - .config/hypr/custom/general.lua
+  - .config/hypr/custom/keybinds.lua
+  - .config/fish/conf.d/local.fish
+  - .config/matugen/config.toml
+  - .config/quickshell/ii/scripts/colors/switchwall.sh
+# Алиасы для dot edit <key>
+aliases:
+  keybinds: .config/hypr/custom/keybinds.lua
+  kb: .config/hypr/custom/keybinds.lua
+  general: .config/hypr/custom/general.lua
+  gen: .config/hypr/custom/general.lua
+  fish: .config/fish/conf.d/local.fish
+  local: .config/fish/conf.d/local.fish
+  matugen: .config/matugen/config.toml
+  wall: .config/quickshell/ii/scripts/colors/switchwall.sh
+  switch: .config/quickshell/ii/scripts/colors/switchwall.sh
+# Регулярки — что чистить после deploy
+clean:
+  patterns:
+    - "*.backup"
+    - "*.new"
+    - "hyprland.conf"
