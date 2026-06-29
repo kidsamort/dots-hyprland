@@ -8,7 +8,7 @@
 
 1. [Быстрый старт](#-быстрый-старт)
 2. [Структура репозитория](#-структура-репозитория)
-3. [Ежедневное использование](#-ежедневное-использование)
+3. [Управление: пошагово](#-управление-пошагово)
 4. [Защита секретов](#-защита-секретов)
 5. [Обновление от upstream](#-обновление-от-upstream)
 6. [Восстановление системы](#-восстановление-системы)
@@ -41,24 +41,28 @@ reboot
 
 ```
 ~/dotfiles/
-├── .config/           # Конфиги программ
-│   ├── fish/          # Fish shell конфиги
-│   ├── hypr/          # Hyprland конфиги
-│   └── ...
-├── .gitignore         # Игнорируемые файлы (секреты, кэш)
-├── README.md          # Эта документация
-└── setup              # Скрипт установки end-4
+├── .config/                # ТВОИ кастомные оверрайды (через stow)
+│   ├── fish/conf.d/        # Fish оверрайды (не трогаются апдейтом)
+│   ├── hypr/custom/        # Hyprland оверрайды (не трогаются апдейтом)
+│   ├── matugen/            # Matugen конфиг (с твоими шаблонами)
+│   └── quickshell/         # Твои скрипты (switchwall.sh)
+├── dots/                   # Апстрим end-4 (через setup install-files)
+│   └── .config/hypr/hyprland/  # *.lua — основные конфиги
+├── .gitignore
+├── README.md
+└── setup                   # Скрипт установки end-4
 ```
 
 ### Что где хранится:
 
-| Папка/Файл | Описание |
-|------------|----------|
-| `.config/fish/` | Конфиги Fish shell (алиасы, темы) |
-| `.config/hypr/` | Конфиги Hyprland (оконный менеджер) |
-| `.config/matugen/` | Конфиги matugen (генерация тем) |
-| `.gitignore` | Список игнорируемых файлов |
-| `~/.bashrc_secrets` | **НЕ В GIT!** Секреты и API ключи |
+| Папка/Файл | Кто управляет | Описание |
+|------------|---------------|----------|
+| `dots/` | `setup install-files` | Апстрим end-4 (основные конфиги) |
+| `.config/hypr/custom/` | **Stow** | Твои оверрайды Hyprland (keybinds, general) |
+| `.config/fish/conf.d/` | **Stow** | Твои Fish оверрайды (пути, secrets) |
+| `.config/matugen/` | **Stow** | Matugen конфиг с твоими шаблонами |
+| `.config/quickshell/` | `setup install-files` | Quickshell (кроме switchwall.sh — Stow) |
+| `~/.bashrc_secrets` | Вручную | **НЕ В GIT!** Секреты и API ключи |
 
 ---
 
@@ -104,48 +108,57 @@ reboot
 
 ---
 
-## 📝 Ежедневное использование
+## 🎮 Управление: пошагово
 
-### Редактирование конфигов
-
-**Важно:** Редактируй файлы **только в `~/dotfiles/`**, никогда в `~/.config/`!
+### ▶️ Если хочешь что-то поменять
 
 ```bash
-# Открыть конфиг Fish
-nano ~/dotfiles/.config/fish/config.fish
+# 1. Открой файл в ~/dotfiles/ (НЕ в ~/.config/!)
+nano ~/dotfiles/.config/hypr/custom/keybinds.lua   # свои бинды
+nano ~/dotfiles/.config/hypr/custom/general.lua    # раскладка, repeat rate
+nano ~/dotfiles/.config/fish/conf.d/local.fish     # пути, алиасы
+nano ~/dotfiles/.config/matugen/config.toml        # matugen шаблоны
 
-# Открыть конфиг Hyprland
-nano ~/dotfiles/.config/hypr/hyprland.conf
+# 2. Сохрани в Git
+git add .
+git commit -m "что поменял"
+
+# 3. Примени в систему
+stow .
+hyprctl reload   # если правил Hyprland
 ```
 
-### Сохранение изменений в Git
+### 🔄 Если обновился upstream (end-4)
 
 ```bash
-cd ~/dotfiles
-
-# Посмотри изменения
-git status
-
-# Добавь файлы
-git add .
-
-# Закоммить с сообщением
-git commit -m "Описание изменений"
-
-# Отправь в GitHub
+git fetch upstream
+git merge upstream/main                    # могут быть конфликты
+./setup install-files --skip-miscconf      # копирует из dots/ в ~/.config
+rm -f ~/.config/quickshell/ii/scripts/colors/switchwall.sh  # чтоб stow не ругался
+stow .                                      # восстанавливает твои оверрайды
+hyprctl reload
+git commit -m "Merge upstream updates"
 git push
 ```
 
-### Применение изменений
-
-После редактирования конфигов:
+### 📦 Если переустановил систему с нуля
 
 ```bash
+git clone git@github.com:kidsamort/dots-hyprland.git ~/dotfiles
 cd ~/dotfiles
-stow .
+stow .                                       # все симлинки на место
+# потом восстанови секреты ~/.bashrc_secrets
+reboot
 ```
 
-Или перезагрузи Hyprland: `SUPER + SHIFT + R`
+### 🔧 Если что-то сломалось
+
+```bash
+cd ~/dotfiles && git status                  # что изменилось
+stow -D . && stow .                          # пересоздать симлинки
+hyprctl reload                               # перезагрузить Hyprland
+git reset --hard HEAD                         # откатить все правки
+```
 
 ---
 
@@ -202,21 +215,24 @@ git merge upstream/main
 
 # 4. Если есть конфликты — реши их в редакторе
 
-# 5. Примени изменения через Stow
+# 5. Примени основные конфиги из апстрима
+./setup install-files --skip-miscconf
+
+# 6. Восстанови свои оверрайды (stow перезапишет копии обратно в симлинки)
+rm -f ~/.config/quickshell/ii/scripts/colors/switchwall.sh
 stow .
 
-# 6. Закоммить слияние
+# 7. Перезагрузи Hyprland
+hyprctl reload
+
+# 8. Закоммить слияние
 git commit -m "Merge upstream updates"
 
-# 7. Отправь в свой репо
+# 9. Отправь в свой репо
 git push origin main
 ```
 
-**После обновления перезагрузись:**
-```bash
-reboot
-# или SUPER + SHIFT + R в Hyprland
-```
+**Важно:** флаг `--skip-miscconf` нужен чтобы не затереть `matugen/` (твой кастомный конфиг с шаблонами для Zed и SDDM).
 
 ---
 
@@ -297,6 +313,7 @@ git reset --hard HEAD~1  # Откат на 1 коммит назад
 3. **Делай бэкап `~/.bashrc_secrets`** отдельно от Git
 4. **Перед обновлением upstream** — сделай коммит текущих изменений
 5. **Проверяй `.gitignore`** — убедись что секреты игнорируются
+6. **После апдейта upstream:** `./setup install-files --skip-miscconf && stow .`
 
 ---
 
@@ -329,4 +346,4 @@ journalctl -b --no-pager
 
 ---
 
-**Последнее обновление:** 2026-03-25
+**Последнее обновление:** 2026-06-29
