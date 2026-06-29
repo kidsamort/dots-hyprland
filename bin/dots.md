@@ -44,6 +44,22 @@ dots apply
 
 Самая частая команда. Запускается после редактирования любого файла в `~/dotfiles/`.
 
+### `dots setup`
+
+Установить dots в систему.
+
+```bash
+dots setup
+```
+
+Что делает:
+1. Симлинк `~/dotfiles/bin/dots` → `~/.local/bin/dots`
+2. Добавляет `~/.local/bin` в PATH для fish (если нет)
+3. Копирует автодополнение в `~/.config/fish/completions/`
+4. Запускает `dots apply`
+
+После этого `dots` доступна из любого места.
+
 ### `dots deploy`
 
 Полное обновление после мержа upstream.
@@ -132,6 +148,7 @@ dots fresh
 ```
 
 ### `dots help`
+| `dots setup` | Установить dots в систему (PATH, автодополнение, apply) |
 
 Справка.
 

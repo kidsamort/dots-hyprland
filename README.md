@@ -28,8 +28,6 @@ cd ~/dotfiles
 # 2. Примени конфиги
 bin/dotss apply
 
-# 3. Добавь dot в PATH
-ln -s ~/dotfiles/bin/dots ~/.local/bin/dots
 
 # 4. Восстанови секреты (с бэкапа или введи заново)
 nano ~/.bashrc_secrets
@@ -144,7 +142,7 @@ git push
 git clone git@github.com:kidsamort/dots-hyprland.git ~/dotfiles
 cd ~/dotfiles
 bin/dotss apply                                # все симлинки на место
-# потом восстанови секреты ~/.bashrc_secrets
+# 3. Восстанови секреты ~/.bashrc_secrets
 reboot
 ```
 
