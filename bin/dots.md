@@ -1,6 +1,6 @@
-# `dot` — управление dotfiles
+# `dots` — управление dotfiles
 
-`dot` — обёртка над stow, install-files и git. Одна команда вместо цепочки `rm → stow → hyprctl reload`.
+`dots` — обёртка над stow, install-files и git. Одна команда вместо цепочки `rm → stow → hyprctl reload`.
 
 ## Установка
 
@@ -24,7 +24,7 @@ managed:
   # ...
 ```
 
-Когда запускаешь `dot apply`:
+Когда запускаешь `dots apply`:
 1. Читает манифест
 2. Удаляет обычные файлы (не симлинки) на месте managed-путей
 3. Запускает `stow --no-folding`
@@ -34,125 +34,125 @@ managed:
 
 ## Команды
 
-### `dot apply`
+### `dots apply`
 
 Удалить конфликтные файлы → stow → hyprctl reload.
 
 ```bash
-dot apply
+dots apply
 ```
 
 Самая частая команда. Запускается после редактирования любого файла в `~/dotfiles/`.
 
-### `dot deploy`
+### `dots deploy`
 
 Полное обновление после мержа upstream.
 
 ```bash
-dot deploy
+dots deploy
 ```
 
 Что делает:
 1. `./setup install-files --skip-miscconf`
 2. Чистит мусор: `*.backup`, `*.new`, заглушку `hyprland.conf`
-3. `dot apply`
+3. `dots apply`
 
-### `dot edit <алиас>`
+### `dots edit <алиас>`
 
 Открыть файл в `$EDITOR` (по умолчанию `nano`).
 
 ```bash
-dot edit keybinds   # откроет .config/hypr/custom/keybinds.lua
-dot edit general    # .config/hypr/custom/general.lua
-dot edit fish       # .config/fish/conf.d/local.fish
+dots edit keybinds   # откроет .config/hypr/custom/keybinds.lua
+dots edit general    # .config/hypr/custom/general.lua
+dots edit fish       # .config/fish/conf.d/local.fish
 ```
 
 Список алиасов — в `.dotfiles.yaml` → `aliases:`.
 
 Без аргумента покажет список и спросит.
 
-### `dot status`
+### `dots status`
 
 Показать состояние конфигов.
 
 ```bash
-dot status
+dots status
 ```
 
 Вывод:
 - `✓ .config/hypr/custom/general.lua` — симлинк в порядке
-- `✗ .config/...` — обычный файл (нужен `dot apply`)
+- `✗ .config/...` — обычный файл (нужен `dots apply`)
 - `⚠ .config/...` — отсутствует
 - Git статус (staged/unstaged)
 - Отставание/опережение относительно origin
 
-### `dot up "<сообщение>"`
+### `dots up "<сообщение>"`
 
 Закоммитить и запушить.
 
 ```bash
-dot up              # спросит сообщение
-dot up "fix: typo"  # сразу с сообщением
+dots up              # спросит сообщение
+dots up "fix: typo"  # сразу с сообщением
 ```
 
 Что делает: `git add -A` → `git commit -m "..."` → `git push`.
 
-### `dot add <путь>`
+### `dots add <путь>`
 
 Добавить файл в managed.
 
 ```bash
-dot add .config/hypr/custom/rules.lua
+dots add .config/hypr/custom/rules.lua
 ```
 
 Файл должен существовать в `~/dotfiles/`.
 
-### `dot remove <путь>`
+### `dots remove <путь>`
 
 Убрать файл из managed.
 
 ```bash
-dot remove .config/hypr/custom/rules.lua
+dots remove .config/hypr/custom/rules.lua
 ```
 
-### `dot init`
+### `dots init`
 
 Просканировать `~/.config/`, найти твои файлы (которых нет в `dots/`), предложить добавить в managed.
 
 ```bash
-dot init
+dots init
 ```
 
-### `dot fresh`
+### `dots fresh`
 
 Вывести инструкцию для чистой установки системы.
 
 ```bash
-dot fresh
+dots fresh
 ```
 
-### `dot help`
+### `dots help`
 
 Справка.
 
 ```bash
-dot help
+dots help
 ```
 
 ## Примеры
 
 ```bash
 # Быстро отредактировать и применить
-dot edit kb
-dot apply
+dots edit kb
+dots apply
 
 # После мержа upstream
 git fetch upstream
 git merge upstream/main
-dot deploy
+dots deploy
 
 # Закоммитить и запушить
-dot up "feat: добавил кастомный rules.lua"
+dots up "feat: добавил кастомный rules.lua"
 ```
 
 ## Как добавить новый файл
@@ -162,12 +162,12 @@ dot up "feat: добавил кастомный rules.lua"
 touch ~/dotfiles/.config/hypr/custom/rules.lua
 
 # 2. Зарегистрировал
-dot add .config/hypr/custom/rules.lua
+dots add .config/hypr/custom/rules.lua
 
 # 3. Применил
-dot apply
+dots apply
 # или алиас для быстрого открытия
-dot edit rules
+dots edit rules
 ```
 
 ## Файлы

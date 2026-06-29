@@ -26,10 +26,10 @@ git clone git@github.com:kidsamort/dots-hyprland.git ~/dotfiles
 cd ~/dotfiles
 
 # 2. Примени конфиги
-bin/dot apply
+bin/dotss apply
 
 # 3. Добавь dot в PATH
-ln -s ~/dotfiles/bin/dot ~/.local/bin/dot
+ln -s ~/dotfiles/bin/dots ~/.local/bin/dots
 
 # 4. Восстанови секреты (с бэкапа или введи заново)
 nano ~/.bashrc_secrets
@@ -117,15 +117,15 @@ reboot
 
 ```bash
 # 1. Открой файл в ~/dotfiles/ (НЕ в ~/.config/!)
-dot edit keybinds   # свои бинды
-dot edit general    # раскладка, repeat rate
-dot edit fish       # пути, алиасы
+dots edit keybinds   # свои бинды
+dots edit general    # раскладка, repeat rate
+dots edit fish       # пути, алиасы
 
 # 2. Сохрани в Git
-dot up "что поменял"
+dots up "что поменял"
 
 # 3. Примени в систему
-dot apply
+dots apply
 ```
 
 ### 🔄 Если обновился upstream (end-4)
@@ -143,7 +143,7 @@ git push
 ```bash
 git clone git@github.com:kidsamort/dots-hyprland.git ~/dotfiles
 cd ~/dotfiles
-bin/dot apply                                # все симлинки на место
+bin/dotss apply                                # все симлинки на место
 # потом восстанови секреты ~/.bashrc_secrets
 reboot
 ```
@@ -151,8 +151,8 @@ reboot
 ### 🔧 Если что-то сломалось
 
 ```bash
-dot status                                   # что не так
-dot apply                                    # пересоздать симлинки
+dots status                                   # что не так
+dots apply                                    # пересоздать симлинки
 git reset --hard HEAD                        # откатить все правки
 ```
 
@@ -342,6 +342,6 @@ journalctl -b --no-pager
 
 ---
 
-**Подробнее про `dot`:** [bin/dot.md](bin/dot.md)
+**Подробнее про `dots`:** [bin/dots.md](bin/dots.md)
 
 **Последнее обновление:** 2026-06-29

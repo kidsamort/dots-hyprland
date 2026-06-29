@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dot — управление dotfiles (stow + install-files + git)
+# dots — управление dotfiles (stow + install-files + git)
 set -euo pipefail
 
 # ─── Пути ──────────────────────────────────────────────────────────────────
@@ -20,19 +20,19 @@ require_yq() { command -v yq &>/dev/null || { err "yq не найден (нуж�
 # ─── Вывод справки ──────────────────────────────────────────────────────────
 cmd_help() {
   cat <<EOF
-${CYAN}dot${NC} — управление dotfiles
+${CYAN}dots${NC} — управление dotfiles
 
 ${GREEN}Использование${NC}:
-  dot ${YELLOW}apply${NC}         Удалить конфликты → stow → hyprctl reload
-  dot ${YELLOW}deploy${NC}        install-files --skip-miscconf → dot apply
-  dot ${YELLOW}edit <alias>${NC}  Открыть файл в \$EDITOR (см. aliases в .dotfiles.yaml)
-  dot ${YELLOW}status${NC}        Статус симлинков, конфликты, git status
-  dot ${YELLOW}up [msg]${NC}      git add → commit → push
-  dot ${YELLOW}add <path>${NC}    Добавить файл в managed
-  dot ${YELLOW}remove <path>${NC} Убрать файл из managed
-  dot ${YELLOW}init${NC}          Сканировать ~/.config/, сгенерировать манифест
-  dot ${YELLOW}fresh${NC}         Инструкция для чистой установки
-  dot ${YELLOW}help${NC}          Эта справка
+  dots ${YELLOW}apply${NC}         Удалить конфликты → stow → hyprctl reload
+  dots ${YELLOW}deploy${NC}        install-files --skip-miscconf → dot apply
+  dots ${YELLOW}edit <alias>${NC}  Открыть файл в \$EDITOR (см. aliases в .dotfiles.yaml)
+  dots ${YELLOW}status${NC}        Статус симлинков, конфликты, git статус
+  dots ${YELLOW}up [msg]${NC}      git add → commit → push
+  dots ${YELLOW}add <path>${NC}    Добавить файл в managed
+  dots ${YELLOW}remove <path>${NC} Убрать файл из managed
+  dots ${YELLOW}init${NC}          Сканировать ~/.config/, сгенерировать манифест
+  dots ${YELLOW}fresh${NC}         Инструкция для чистой установки
+  dots ${YELLOW}help${NC}          Эта справка
 
 EOF
   exit 0
@@ -139,7 +139,7 @@ cmd_edit() {
   fi
 
   $EDITOR "$fullpath"
-  ok "Файл сохранён. Примени: dot apply"
+  ok "Файл сохранён. Примени: dots apply"
 }
 
 # ─── status ─────────────────────────────────────────────────────────────────
@@ -162,9 +162,9 @@ cmd_status() {
         warn "$path → ${link_target//$HOME/\~} (не из dotfiles)"
       fi
     elif [ -f "$target" ]; then
-      err "$path — обычный файл (не симлинк)! Нужен dot apply"
+      err "$path — обычный файл (не симлинк)! Нужен dots apply"
     else
-      warn "$path — отсутствует (возможно не запускали dot apply)"
+      warn "$path — отсутствует (возможно не запускали dots apply)"
     fi
   done < <(yq '.managed[]' "$MANIFEST")
 
@@ -241,7 +241,7 @@ cmd_add() {
 
   yq -i ".managed += [\"$path\"]" "$MANIFEST"
   ok "Добавлено: $path"
-  info "Примени: dot apply"
+  info "Примени: dots apply"
 }
 
 # ─── remove ─────────────────────────────────────────────────────────────────
@@ -259,7 +259,7 @@ cmd_remove() {
 
   yq -i "del(.managed[] | select(. == \"$path\"))" "$MANIFEST"
   ok "Удалено: $path"
-  info "Совет: сделай dot apply, чтобы убрать симлинк"
+  info "Совет: сделай dots apply, чтобы убрать симлинк"
 }
 
 # ─── init ────────────────────────────────────────────────────────────────────
@@ -309,7 +309,7 @@ cmd_init() {
           ok "Добавлено: $f"
         fi
       done
-      info "Готово. Запусти dot apply"
+      info "Готово. Запусти dots apply"
       ;;
   esac
 }
@@ -324,7 +324,7 @@ ${CYAN}Установка с нуля${NC}
    cd ~/dotfiles
 
 2. Примени конфиги:
-   bin/dot apply
+   bin/dots apply
 
 3. Восстанови секреты:
    cp /путь/к/бэкапу ~/.bashrc_secrets
@@ -351,7 +351,7 @@ main() {
     init)    cmd_init "$@" ;;
     fresh)   cmd_fresh "$@" ;;
     help|--help|-h) cmd_help ;;
-    *)       err "Неизвестная команда: $cmd"; echo "Запусти: dot help"; exit 1 ;;
+    *)       err "Неизвестная команда: $cmd"; echo "Запусти: dots help"; exit 1 ;;
   esac
 }
 
