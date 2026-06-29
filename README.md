@@ -25,13 +25,16 @@
 git clone git@github.com:kidsamort/dots-hyprland.git ~/dotfiles
 cd ~/dotfiles
 
-# 2. Примени конфиги через Stow
-stow .
+# 2. Примени конфиги
+bin/dot apply
 
-# 3. Восстанови секреты (с бэкапа или введи заново)
+# 3. Добавь dot в PATH
+ln -s ~/dotfiles/bin/dot ~/.local/bin/dot
+
+# 4. Восстанови секреты (с бэкапа или введи заново)
 nano ~/.bashrc_secrets
 
-# 4. Перезагрузись
+# 5. Перезагрузись
 reboot
 ```
 
@@ -114,29 +117,23 @@ reboot
 
 ```bash
 # 1. Открой файл в ~/dotfiles/ (НЕ в ~/.config/!)
-nano ~/dotfiles/.config/hypr/custom/keybinds.lua   # свои бинды
-nano ~/dotfiles/.config/hypr/custom/general.lua    # раскладка, repeat rate
-nano ~/dotfiles/.config/fish/conf.d/local.fish     # пути, алиасы
-nano ~/dotfiles/.config/matugen/config.toml        # matugen шаблоны
+dot edit keybinds   # свои бинды
+dot edit general    # раскладка, repeat rate
+dot edit fish       # пути, алиасы
 
 # 2. Сохрани в Git
-git add .
-git commit -m "что поменял"
+dot up "что поменял"
 
 # 3. Примени в систему
-stow .
-hyprctl reload   # если правил Hyprland
+dot apply
 ```
 
 ### 🔄 Если обновился upstream (end-4)
 
 ```bash
 git fetch upstream
-git merge upstream/main                    # могут быть конфликты
-./setup install-files --skip-miscconf      # копирует из dots/ в ~/.config
-rm -f ~/.config/quickshell/ii/scripts/colors/switchwall.sh  # чтоб stow не ругался
-stow .                                      # восстанавливает твои оверрайды
-hyprctl reload
+git merge upstream/main      # могут быть конфликты
+dot deploy                   # install-files → clean → apply
 git commit -m "Merge upstream updates"
 git push
 ```
@@ -146,7 +143,7 @@ git push
 ```bash
 git clone git@github.com:kidsamort/dots-hyprland.git ~/dotfiles
 cd ~/dotfiles
-stow .                                       # все симлинки на место
+bin/dot apply                                # все симлинки на место
 # потом восстанови секреты ~/.bashrc_secrets
 reboot
 ```
@@ -154,10 +151,9 @@ reboot
 ### 🔧 Если что-то сломалось
 
 ```bash
-cd ~/dotfiles && git status                  # что изменилось
-stow -D . && stow .                          # пересоздать симлинки
-hyprctl reload                               # перезагрузить Hyprland
-git reset --hard HEAD                         # откатить все правки
+dot status                                   # что не так
+dot apply                                    # пересоздать симлинки
+git reset --hard HEAD                        # откатить все правки
 ```
 
 ---
@@ -345,5 +341,7 @@ journalctl -b --no-pager
 - **Документация end-4:** https://ii.clsty.link
 
 ---
+
+**Подробнее про `dot`:** [bin/dot.md](bin/dot.md)
 
 **Последнее обновление:** 2026-06-29
